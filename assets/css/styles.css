@@ -7,16 +7,17 @@
    ========================================================= */
 
 :root{
-  --bg: #0b1220;
-  --panel: #101a2e;
-  --text: #eef2ff;
-  --muted: #c7d2fe;
+  --bg: #0b1220;           /* page background (slightly darker than brand navy) */
+  --panel: #0f1b33;        /* cards */
+  --text: #ffffff;
+  --muted: #d7e2ff;
   --border: rgba(255,255,255,.14);
-  --link: #a5b4fc;
-  --link-hover: #c4b5fd;
-  --accent: #7c3aed;
-  --accent-2: #22c55e;
-  --danger: #ef4444;
+
+  --link: #a9c1ff;
+  --link-hover: #d7e2ff;
+
+  --accent: #102070;       /* brand navy */
+  --accent-2: #283850;     /* slate */
 
   --shadow: 0 10px 30px rgba(0,0,0,.35);
   --radius: 16px;
@@ -24,7 +25,7 @@
   --max: 1120px;
   --pad: clamp(1rem, 3vw, 2rem);
   --lh: 1.6;
-  --focus: 3px solid #fbbf24; /* amber focus ring */
+  --focus: 3px solid #fbbf24;
 }
 
 @media (prefers-color-scheme: light){
@@ -55,10 +56,11 @@ html{
 
 body{
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background: radial-gradient(1200px 600px at 20% 0%, rgba(124,58,237,.35), transparent 60%),
-              radial-gradient(900px 500px at 90% 15%, rgba(34,197,94,.22), transparent 55%),
-              var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:
+    radial-gradient(1100px 600px at 20% 0%, rgba(16,32,112,.45), transparent 60%),
+    radial-gradient(900px 500px at 90% 15%, rgba(40,56,80,.28), transparent 55%),
+    var(--bg);
   color: var(--text);
   line-height: var(--lh);
 }
@@ -244,28 +246,76 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
   margin-top: 1.2rem;
 }
 
+/* Buttons: accessible in default + hover + focus-visible */
 .button{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: .5rem;
+
   padding: .75rem 1rem;
   border-radius: 999px;
-  border: 1px solid var(--border);
+
+  border: 2px solid transparent;     /* thicker border helps visibility */
   text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .01em;
+
+  /* Default: neutral button */
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
   color: var(--text);
-  font-weight: 600;
-  background: color-mix(in srgb, var(--panel) 90%, transparent);
+  box-shadow: none;
+
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
 }
+
+/* Primary CTA: brand navy gradient, WHITE text */
 .button.primary{
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 50%, #000 0%));
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  background: linear-gradient(135deg, #102070, #0b1220);
+  color: #ffffff;
+  border-color: rgba(255,255,255,.18);
 }
+
+/* Secondary button: outline style, predictable contrast */
+.button.secondary{
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255,255,255,.35);
+}
+
+/* Hover: do NOT change text colour. Increase affordance via border/shadow */
 .button:hover{
   transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--text) 45%, var(--border));
+  box-shadow: 0 10px 22px rgba(0,0,0,.25);
 }
+
+/* Active: small press */
+.button:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0,0,0,.22);
+}
+
+/* Focus: rely on strong outline (already in your CSS via :focus-visible),
+   but keep button looking intentional too */
+.button:focus-visible{
+  border-color: color-mix(in srgb, var(--text) 55%, var(--border));
+}
+
+/* Reduced motion: no movement */
 @media (prefers-reduced-motion: reduce){
-  .button:hover{ transform: none; }
+  .button,
+  .button:hover,
+  .button:active{
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Optional: for links styled as buttons inside text blocks */
+.button.small{
+  padding: .55rem .85rem;
+  font-weight: 700;
 }
 
 .hero-aside{
@@ -300,17 +350,36 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
   gap: .6rem;
   margin-top: 1rem;
 }
+
+/* Pills are informational tags and non-interactive */
 .pill{
   display: inline-flex;
-  align-items: center;
+  align-items: center;  
   gap: .4rem;
   padding: .35rem .65rem;
+
   border-radius: 999px;
   border: 1px solid var(--border);
+
   background: color-mix(in srgb, var(--panel) 88%, transparent);
   color: var(--muted);
+
   font-size: .93rem;
+  text-decoration: none;
+
+  cursor: default;
 }
+
+/* If pills become links later, enable this:
+.pill:hover,
+.pill:focus,
+.pill:focus-visible{
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border-color: var(--border);
+  outline: none;
+}
+  */
+
 
 .page-title{
   margin: .2rem 0 1rem;
@@ -394,6 +463,45 @@ footer{
   border-color: var(--border);
   background: color-mix(in srgb, var(--panel) 85%, transparent);
   color: var(--text);
+}
+
+.brand img{
+  height: 40px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 420px){
+  .brand img{ height: 34px; }
+}
+
+/* Safety override: ensure primary CTA never becomes low-contrast */
+a.button.primary,
+button.button.primary{
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #102070, #0b1220) !important;
+}
+a.button.primary:hover,
+button.button.primary:hover{
+  color: #ffffff !important; /* keep text stable */
+}
+
+/* CTA clarity: underline on hover + focus (not colour-only) */
+.button:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .22em;
+}
+
+.button:focus-visible{
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: .25em;
+}
+
+/* Prevent underline on icon-only buttons (future-proofing) */
+.button.icon-only:hover,
+.button.icon-only:focus-visible{
+  text-decoration: none;
 }
 
 /* Visually hidden utility for accessible labels */
