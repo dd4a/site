@@ -1,7 +1,12 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/">
-      <img src="/assets/img/logo-horizontal-white.png" alt="Digital Design 4 All" width="220" height="58" />
+      <img
+        src="/assets/img/logo-horizontal-white.png"
+        alt="Digital Design 4 All"
+        width="220"
+        height="58"
+      />
 
       <span class="brand-name">
         <strong>Digital Design 4 All</strong>
@@ -9,43 +14,24 @@
       </span>
     </a>
 
-    <button class="menu-button" type="button"
+    <button
+      class="menu-button"
+      type="button"
       aria-controls="site-nav"
       aria-expanded="false"
-      data-menu-button>
+      data-menu-button
+    >
       Menu
     </button>
 
-<nav id="site-nav" data-site-nav aria-label="Primary navigation">
-  <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+    {% assign u = page.url | default: "/" %}
 
-  <a href="/services.html"
-     {% if page.url contains "services" %}
-       aria-current="page"
-     {% endif %}>
-     Services
-  </a>
-
-  <a href="/work.html"
-     {% if page.url contains "work" %}
-       aria-current="page"
-     {% endif %}>
-     Work
-  </a>
-
-  <a href="/resources.html"
-     {% if page.url contains "resources" %}
-       aria-current="page"
-     {% endif %}>
-     Resources
-  </a>
-
-  <a href="/contact.html"
-     {% if page.url contains "contact" %}
-       aria-current="page"
-     {% endif %}>
-     Contact
-  </a>
-</nav>
+    <nav id="site-nav" data-site-nav aria-label="Primary navigation">
+      <a href="/" {% if u == "/" %}aria-current="page"{% endif %}>Home</a>
+      <a href="/services.html" {% if u contains "services" %}aria-current="page"{% endif %}>Services</a>
+      <a href="/work.html" {% if u contains "work" %}aria-current="page"{% endif %}>Work</a>
+      <a href="/resources.html" {% if u contains "resources" %}aria-current="page"{% endif %}>Resources</a>
+      <a href="/contact.html" {% if u contains "contact" %}aria-current="page"{% endif %}>Contact</a>
+    </nav>
   </div>
 </header>
