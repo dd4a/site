@@ -1,8 +1,8 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/">
+    <a class="brand" href="{{ site.baseurl }}/">
       <img
-        src="/assets/img/logo-horizontal-white.png"
+        src="{{ site.baseurl }}/assets/img/logo-horizontal-white.png"
         alt="Digital Design 4 All"
         width="220"
         height="58"
@@ -27,11 +27,11 @@
     {% assign u = page.url | default: "/" %}
 
     <nav id="site-nav" data-site-nav aria-label="Primary navigation">
-      <a href="/" {% if u == "/" %}aria-current="page"{% endif %}>Home</a>
-      <a href="/services.html" {% if u contains "services" %}aria-current="page"{% endif %}>Services</a>
-      <a href="/work.html" {% if u contains "work" %}aria-current="page"{% endif %}>Work</a>
-      <a href="/resources.html" {% if u contains "resources" %}aria-current="page"{% endif %}>Resources</a>
-      <a href="/contact.html" {% if u contains "contact" %}aria-current="page"{% endif %}>Contact</a>
+      <a href="{{ site.baseurl }}/" {% if u == "/" %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ site.baseurl }}/services.html" {% if u contains "services" %}aria-current="page"{% endif %}>Services</a>
+      <a href="{{ site.baseurl }}/work.html" {% if u contains "work" %}aria-current="page"{% endif %}>Work</a>
+      <a href="{{ site.baseurl }}/resources.html" {% if u contains "resources" %}aria-current="page"{% endif %}>Resources</a>
+      <a href="{{ site.baseurl }}/contact.html" {% if u contains "contact" %}aria-current="page"{% endif %}>Contact</a>
     </nav>
   </div>
 </header>

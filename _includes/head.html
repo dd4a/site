@@ -5,16 +5,20 @@
   <meta name="description" content="{{ page.description | default: "Accessibility consulting: audits, remediation guidance, accessibility programs, and training." }}" />
   <meta name="theme-color" content="#102070" />
 
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
 
-  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
-  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/apple-touch-icon.png">
 
   <meta property="og:title" content="{{ page.og_title | default: (page.title | default: 'Digital Design 4 All') }}" />
   <meta property="og:description" content="{{ page.og_description | default: (page.description | default: 'Accessibility consulting: audits, remediation guidance, accessibility programs, and training.') }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="{{ page.og_image | default: '/assets/img/og-card.svg' }}" />
+  {% if page.og_image %}
+  <meta property="og:image" content="{{ page.og_image }}" />
+  {% else %}
+  <meta property="og:image" content="{{ site.baseurl }}/assets/img/og-card.svg" />
+  {% endif %}
 
   {% if page.noindex == true %}
   <meta name="robots" content="noindex" />
