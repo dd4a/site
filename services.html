@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | Your Name</title>
+  <meta name="description" content="Accessibility audits, remediation guidance, accessibility programs, and training." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name"><strong>Your Name</strong><span>IT Accessibility Consulting</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false" data-menu-button>Menu</button>
+      <nav id="site-nav" data-site-nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="work.html">Work</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="section">
+      <div class="card content">
+        <h1 class="page-title">Services</h1>
+        <p>
+          Engagements are scoped for clarity and shipped with deliverables your team can use immediately.
+          If you’re not sure what you need, start with a short discovery call.
+        </p>
+
+        <hr class="hr" />
+
+        <h2>1) Accessibility audits</h2>
+        <ul>
+          <li>WCAG 2.2 / EN 301 549 aligned review (web apps, sites, documents)</li>
+          <li>Findings with impact statements, repro steps, and recommended fixes</li>
+          <li>Optional: assistive technology verification and regression QA support</li>
+        </ul>
+
+        <h2>2) Remediation support</h2>
+        <ul>
+          <li>Ticket-ready recommendations, code-level guidance, and acceptance criteria</li>
+          <li>Design-system pattern fixes (forms, modals, tables, navigation, charts)</li>
+          <li>Developer enablement: “how to avoid this next time”</li>
+        </ul>
+
+        <h2>3) Accessibility programs</h2>
+        <ul>
+          <li>Governance & roles, definitions of done, and risk-based roadmaps</li>
+          <li>Procurement language and accessibility requirements</li>
+          <li>Training for product, design, dev, QA, and content teams</li>
+        </ul>
+
+        <div class="notice" role="note">
+          <strong>Tip:</strong> If you need “compliance,” you usually need two things:
+          (1) a reliable testing method, and (2) a way to keep accessibility from regressing.
+          I can help with both.
+        </div>
+
+        <div class="actions">
+          <a class="button primary" href="contact.html">Request a quote</a>
+          <a class="button" href="work.html">See example deliverables</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Your Name</strong><br />
+        <span>IT Accessibility Consulting</span><br />
+        <span class="help">© <span id="year"></span> · <a href="privacy.html">Privacy</a></span>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Your Name</title>
+  <meta name="description" content="Contact Your Name for IT accessibility consulting." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name"><strong>Your Name</strong><span>IT Accessibility Consulting</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false" data-menu-button>Menu</button>
+      <nav id="site-nav" data-site-nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="section">
+      <div class="card content">
+        <h1 class="page-title">Contact</h1>
+        <p>
+          Email is best: <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>.
+          If you prefer a form, use the one below (it opens your email app by default).
+        </p>
+
+        <div class="notice" role="note">
+          <strong>Accessibility note:</strong> This form uses proper labels and does not rely on placeholders.
+        </div>
+
+        <!-- Option A (no third-party): mailto form (works without JS, but depends on user's email client) -->
+        <form class="form" action="mailto:hello@yourdomain.com" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="topic">What do you need help with?</label>
+            <input id="topic" name="topic" required />
+            <div class="help">Example: audit, remediation plan, training, program setup.</div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button class="button primary" type="submit">Send</button>
+          <p class="help">
+            If this doesn’t work on your device, email me directly at
+            <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>.
+          </p>
+        </form>
+
+        <hr class="hr" />
+
+        <h2>Optional: hosted form endpoint</h2>
+        <p>
+          If you want the form to submit without relying on a mail client, swap the form tag above for a service like
+          Formspree / StaticForms / Getform. These typically have free tiers. (You’d replace the <code>action</code> URL
+          and use their recommended hidden fields.)
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Your Name</strong><br />
+        <span>IT Accessibility Consulting</span><br />
+        <span class="help">© <span id="year"></span> · <a href="privacy.html">Privacy</a></span>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
