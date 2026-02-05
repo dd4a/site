@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "prettier.disableLanguages": ["html", "liquid"],
+  "prettier.ignorePath": ".prettierignore",
+  "htmlhint.enable": false,
+  "htmlhint.options": {
+    "doctype-first": false,
+    "tagname-lowercase": false
+  }
+}
