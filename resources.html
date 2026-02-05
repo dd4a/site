@@ -1,87 +1,37 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Resources | Your Name</title>
-  <meta name="description" content="Practical accessibility resources and reading list." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+---
+layout: default
+title: "Resources"
+description: "Practical accessibility resources and reading list."
+---
 
-  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
-<link rel="icon" href="assets/img/favicon-32.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta name="theme-color" content="#102070">
 
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<section class="section">
+  <div class="card content">
+    <h1 class="page-title">Resources</h1>
+    <p>Short list of standards and practical references. Replace/expand as you like.</p>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name"><strong>Your Name</strong><span>IT Accessibility Consulting</span></span>
-      </a>
-      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false" data-menu-button>Menu</button>
-      <nav id="site-nav" data-site-nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="resources.html" aria-current="page">Resources</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <hr class="hr" />
+
+    <h2>Standards & guidance</h2>
+    <ul>
+      <li>WCAG 2.2 (Web Content Accessibility Guidelines)</li>
+      <li>WAI-ARIA Authoring Practices (APG)</li>
+      <li>EN 301 549 (ICT accessibility requirements)</li>
+    </ul>
+
+    <h2>Practical checks I recommend</h2>
+    <ul>
+      <li>Keyboard-only navigation (Tab/Shift+Tab/Enter/Space/Escape)</li>
+      <li>Headings/landmarks (structure that matches visual layout)</li>
+      <li>Forms (labels, errors, instructions, status messages)</li>
+      <li>Color/contrast (don’t rely on color alone)</li>
+      <li>Motion/animation (support reduced-motion users)</li>
+    </ul>
+
+    <div class="notice" role="note">
+      Want a customized checklist for your stack (React/Vue/Angular, CMS, PDFs, etc.)?
+      <a href="/contact.html">Send me a note</a>.
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="main" class="container">
-    <section class="section">
-      <div class="card content">
-        <h1 class="page-title">Resources</h1>
-        <p>Short list of standards and practical references. Replace/expand as you like.</p>
-
-        <hr class="hr" />
-
-        <h2>Standards & guidance</h2>
-        <ul>
-          <li>WCAG 2.2 (Web Content Accessibility Guidelines)</li>
-          <li>WAI-ARIA Authoring Practices (APG)</li>
-          <li>EN 301 549 (ICT accessibility requirements)</li>
-        </ul>
-
-        <h2>Practical checks I recommend</h2>
-        <ul>
-          <li>Keyboard-only navigation (Tab/Shift+Tab/Enter/Space/Escape)</li>
-          <li>Headings/landmarks (structure that matches visual layout)</li>
-          <li>Forms (labels, errors, instructions, status messages)</li>
-          <li>Color/contrast (don’t rely on color alone)</li>
-          <li>Motion/animation (support reduced-motion users)</li>
-        </ul>
-
-        <div class="notice" role="note">
-          Want a customized checklist for your stack (React/Vue/Angular, CMS, PDFs, etc.)?
-          <a href="contact.html">Send me a note</a>.
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Your Name</strong><br />
-        <span>IT Accessibility Consulting</span><br />
-        <span class="help">© <span id="year"></span> · <a href="privacy.html">Privacy</a></span>
-      </div>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/site.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>

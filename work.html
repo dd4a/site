@@ -1,100 +1,50 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Work | Your Name</title>
-  <meta name="description" content="Example deliverables and ways of working." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+---
+layout: default
+title: "Work"
+description: "Example deliverables and ways of working."
+---
 
-  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
-<link rel="icon" href="assets/img/favicon-32.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta name="theme-color" content="#102070">
 
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<section class="section">
+  <div class="card content">
+    <h1 class="page-title">Work</h1>
+    <p>
+      Replace the examples below with real case studies when you’re ready. Keep them short:
+      problem → approach → outcome → artifacts.
+    </p>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name"><strong>Your Name</strong><span>IT Accessibility Consulting</span></span>
-      </a>
-      <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false" data-menu-button>Menu</button>
-      <nav id="site-nav" data-site-nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html" aria-current="page">Work</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <hr class="hr" />
+
+    <h2>Example case study formats</h2>
+    <div class="grid-3">
+      <article class="card feature">
+        <h3>Audit → roadmap</h3>
+        <p><strong>Outcome:</strong> a prioritized backlog with “why it matters” and “how to fix.”</p>
+      </article>
+      <article class="card feature">
+        <h3>Design system uplift</h3>
+        <p><strong>Outcome:</strong> accessible patterns (forms, modals, navigation) reused everywhere.</p>
+      </article>
+      <article class="card feature">
+        <h3>Program setup</h3>
+        <p><strong>Outcome:</strong> definition of done, training, governance, and sustainable QA.</p>
+      </article>
     </div>
-  </header>
 
-  <main id="main" class="container">
-    <section class="section">
-      <div class="card content">
-        <h1 class="page-title">Work</h1>
-        <p>
-          Replace the examples below with real case studies when you’re ready. Keep them short:
-          problem → approach → outcome → artifacts.
-        </p>
+    <hr class="hr" />
 
-        <hr class="hr" />
+    <h2>What deliverables look like</h2>
+    <ul>
+      <li>Findings with severity, affected users, and assistive tech notes</li>
+      <li>Repro steps + expected/actual results</li>
+      <li>Acceptance criteria your QA team can test against</li>
+      <li>Plain-language executive summary for stakeholders</li>
+    </ul>
 
-        <h2>Example case study formats</h2>
-        <div class="grid-3">
-          <article class="card feature">
-            <h3>Audit → roadmap</h3>
-            <p><strong>Outcome:</strong> a prioritized backlog with “why it matters” and “how to fix.”</p>
-          </article>
-          <article class="card feature">
-            <h3>Design system uplift</h3>
-            <p><strong>Outcome:</strong> accessible patterns (forms, modals, navigation) reused everywhere.</p>
-          </article>
-          <article class="card feature">
-            <h3>Program setup</h3>
-            <p><strong>Outcome:</strong> definition of done, training, governance, and sustainable QA.</p>
-          </article>
-        </div>
-
-        <hr class="hr" />
-
-        <h2>What deliverables look like</h2>
-        <ul>
-          <li>Findings with severity, affected users, and assistive tech notes</li>
-          <li>Repro steps + expected/actual results</li>
-          <li>Acceptance criteria your QA team can test against</li>
-          <li>Plain-language executive summary for stakeholders</li>
-        </ul>
-
-        <div class="actions">
-          <a class="button primary" href="contact.html">Discuss a project</a>
-          <a class="button" href="resources.html">See resources</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Your Name</strong><br />
-        <span>IT Accessibility Consulting</span><br />
-        <span class="help">© <span id="year"></span> · <a href="privacy.html">Privacy</a></span>
-      </div>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <div class="actions">
+      <a class="button primary" href="/contact.html">Discuss a project</a>
+      <a class="button" href="/resources.html">See resources</a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="assets/js/site.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>
