@@ -36,3 +36,4 @@ if [[ -n "${HTML_FILES}" ]] && grep -nE 'mailto:' $HTML_FILES >/dev/null; then
 fi
 
 echo "✅ OK: no raw email or mailto: found in source templates."
+#
