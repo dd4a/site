@@ -17,7 +17,7 @@ FILES=$(git ls-files \
 
 # 1) Raw email
 if grep -nE 'info@dd4a\.ca' $FILES >/dev/null; then
-  echo "❌ Found raw email address info@dd4a.ca in tracked files:"
+  echo "❌ Found raw email address in tracked files:"
   grep -nE 'info@dd4a\.ca' $FILES
   exit 1
 fi
