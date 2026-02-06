@@ -453,16 +453,28 @@ footer{
   .footer-links{ justify-content: flex-start; }
 }
 .footer-links a{
-  padding: .35rem .6rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
+  /* Remove pill visuals, keep spacing minimal for no layout shift */
+  padding: 0 .1em;
+  border: none;
+  border-radius: 0;
   text-decoration: none;
   color: var(--muted);
+  transition: color .15s;
 }
 .footer-links a:hover{
-  border-color: var(--border);
-  background: color-mix(in srgb, var(--panel) 85%, transparent);
+  text-decoration: underline;
   color: var(--text);
+  /* No background, no border, no radius */
+}
+
+/* Focus-visible: strong rectangular outline, underline, no layout shift */
+.footer-links a:focus-visible {
+  outline: var(--focus);
+  outline-offset: 3px;
+  text-decoration: underline;
+  color: var(--text);
+  border: none;
+  border-radius: 0;
 }
 
 .brand img{
