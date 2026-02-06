@@ -1,0 +1,43 @@
+name: Accessibility Regression Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Install Jekyll deps
+        run: bundle install
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install node deps
+        run: npm ci || npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Validate HTML output
+        run: npm run html:validate
+
+      - name: Run accessibility regression checks (axe)
+        run: npm run a11y:ci
