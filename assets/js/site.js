@@ -57,3 +57,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!nav.contains(target) && target !== btn) setOpen(false);
   });
 })();
+
