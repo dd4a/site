@@ -1,6 +1,0 @@
-# Ignore Jekyll templates and includes to avoid formatting Liquid tags
-_includes/*
-_layouts/*
-# Optionally ignore all HTML if you want to avoid any Prettier changes to pages
-# Uncomment the following line to ignore all HTML files:
-# *.html
