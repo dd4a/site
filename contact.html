@@ -9,8 +9,7 @@ description: "Get in touch with Digital Design 4 All (DD4A) for accessibility co
   <div class="card content">
     <h1 class="page-title">Contact</h1>
     <p>
-      <a class="js-email" href="#" data-email="aW5mb0BkZDRhLmNh" data-subject="DD4A inquiry">Email us</a>
-      <noscript><span>info [at] dd4a.ca</span></noscript>
+      {% include email-link.html text="Email us" subject="DD4A inquiry" %}
       to start a discussion about your accessibility project. Based in Canada, working worldwide including the US.
     </p>
 
@@ -29,7 +28,7 @@ description: "Get in touch with Digital Design 4 All (DD4A) for accessibility co
     </ul>
 
     <div class="actions">
-      <a class="button primary js-email" href="#" data-email="aW5mb0BkZDRhLmNh" data-subject="DD4A inquiry">Get in touch</a>
+      {% include email-link.html text="Get in touch" subject="DD4A inquiry" class="button primary" %}
       <a class="button" href="{{ site.baseurl }}/services.html">Learn about services</a>
     </div>
 
