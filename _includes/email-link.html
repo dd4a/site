@@ -1,0 +1,19 @@
+{%- comment -%}
+Usage:
+  {% include email-link.html text="Email us" subject="DD4A inquiry" class="js-email" %}
+Options:
+  text    (default: "Email us")
+  subject (optional)
+  class   (optional extra classes)
+{%- endcomment -%}
+
+{%- assign link_text = include.text | default: "Email us" -%}
+{%- assign subject = include.subject | default: "" -%}
+{%- assign extra_class = include.class | default: "" -%}
+
+<a class="js-email {{ extra_class | strip }}"
+   href="#"
+   data-email="aW5mb0BkZDRhLmNh"
+   {%- if subject != "" -%} data-subject="{{ subject }}" {%- endif -%}
+>{{ link_text }}</a>
+<noscript><span>info [at] dd4a.ca</span></noscript>
