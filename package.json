@@ -1,0 +1,17 @@
+{
+  "name": "dd4a-site-checks",
+  "private": true,
+  "scripts": {
+    "a11y:build": "bundle exec jekyll build",
+    "a11y:serve": "npx http-server ./_site -p 8080 -c-1 --silent",
+    "a11y:test": "node ./scripts/a11y-check.mjs",
+    "a11y:ci": "npm run a11y:build && (npm run a11y:serve & node ./scripts/wait-for.mjs http://127.0.0.1:8080/ 30) && npm run a11y:test",
+    "html:validate": "html-validate \"_site/**/*.html\""
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.9.0",
+    "@playwright/test": "^1.49.0",
+    "html-validate": "^8.24.0",
+    "http-server": "^14.1.1"
+  }
+}
