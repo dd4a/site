@@ -4,13 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   emailLinks.forEach((link) => {
     const user = link.getAttribute('data-user');
     const domain = link.getAttribute('data-domain');
+    const subject = link.getAttribute('data-subject');
     if (user && domain) {
       const email = user + '@' + domain;
-      link.href = 'mailto:' + email;
-      // Only replace text if it's generic placeholder (e.g., "Email us", "info@dd4a.ca")
-      if (link.textContent === 'Email us') {
-        link.textContent = email;
+      let href = 'mailto:' + email;
+      if (subject) {
+        href += '?subject=' + encodeURIComponent(subject);
       }
+      link.href = href;
+      // Set aria-label with email address (no @ symbol to avoid screen reader confusion)
+      const ariaEmail = user + ' at ' + domain;
+      link.setAttribute('aria-label', link.textContent + ' at ' + ariaEmail);
+      // Do NOT replace link text with raw email
     }
   });
 });
