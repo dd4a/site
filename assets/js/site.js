@@ -11,22 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
       return;
     }
-
-    // If already set (or user has JS disabled), don't override.
+    // If href isn't already a mailto, construct and set it (preserve existing mailto)
     const existingHref = link.getAttribute("href") || "";
-    if (existingHref.startsWith("mailto:")) return;
-
     const subject = link.getAttribute("data-subject") || "";
 
-    const params = new URLSearchParams();
-    if (subject) params.set("subject", subject);
+    if (!existingHref.startsWith("mailto:")) {
+      const params = new URLSearchParams();
+      if (subject) params.set("subject", subject);
 
-    const href = `mailto:${email}${params.toString() ? `?${params.toString()}` : ""}`;
-    link.setAttribute("href", href);
+      const href = `mailto:${email}${params.toString() ? `?${params.toString()}` : ""}`;
+      link.setAttribute("href", href);
+    }
 
-    // Accessibility label: avoid literal "@"
+    // Always set aria-label and avoid using the literal "@" in the label
     const emailWithoutAt = email.replace("@", " at ");
-    link.setAttribute("aria-label", `Email ${emailWithoutAt}`);
+    link.setAttribute("aria-label", `Email us at ${emailWithoutAt}`);
   });
 });
 
