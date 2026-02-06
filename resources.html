@@ -1,14 +1,17 @@
 ---
 layout: default
-title: "Resources"
-description: "Practical accessibility resources and reading list."
+title: "Resources | Digital Design 4 All (DD4A)"
+description: "Accessibility standards, practical testing checklists, and resources for web, mobile, and document accessibility."
 ---
 
 
 <section class="section">
   <div class="card content">
     <h1 class="page-title">Resources</h1>
-    <p>Short list of standards and practical references. Replace/expand as you like.</p>
+    <p>
+      Digital accessibility is built on standards, testing patterns, and team enablement.
+      Below is a starter guide to standards we reference, practical checks we recommend, and tools that can help.
+    </p>
 
     <hr class="hr" />
 
@@ -19,18 +22,21 @@ description: "Practical accessibility resources and reading list."
       <li>EN 301 549 (ICT accessibility requirements)</li>
     </ul>
 
-    <h2>Practical checks I recommend</h2>
+    <h2>Practical checks we recommend</h2>
     <ul>
-      <li>Keyboard-only navigation (Tab/Shift+Tab/Enter/Space/Escape)</li>
-      <li>Headings/landmarks (structure that matches visual layout)</li>
-      <li>Forms (labels, errors, instructions, status messages)</li>
-      <li>Color/contrast (don’t rely on color alone)</li>
-      <li>Motion/animation (support reduced-motion users)</li>
+      <li><strong>Keyboard navigation:</strong> Tab, Shift+Tab, Enter, Space, Escape—can you use the app without a mouse?</li>
+      <li><strong>Headings & landmarks:</strong> Logical structure that matches visual hierarchy.</li>
+      <li><strong>Form accessibility:</strong> Proper labels, error messages, instructions, and status updates.</li>
+      <li><strong>Color contrast:</strong> 4.5:1 for text; don't rely on color alone for meaning.</li>
+      <li><strong>Motion & animation:</strong> Respect `prefers-reduced-motion` for users sensitive to motion.</li>
+      <li><strong>Mobile screen readers:</strong> VoiceOver (iOS), TalkBack (Android)—how does your app read?</li>
+      <li><strong>Document structure:</strong> PDFs, Word docs—headings, lists, and alt text for images.</li>
     </ul>
 
     <div class="notice" role="note">
-      Want a customized checklist for your stack (React/Vue/Angular, CMS, PDFs, etc.)?
-      <a href="{{ site.baseurl }}/contact.html">Send me a note</a>.
+      <strong>Need a tailored checklist?</strong>
+      We craft customized accessibility checklists for your stack (React/Vue/Angular, CMS, PDF workflows, etc.).
+      <a href="{{ site.baseurl }}/contact.html">Get in touch</a> to discuss.
     </div>
   </div>
 </section>

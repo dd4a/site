@@ -1,0 +1,50 @@
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby/Bundler
+# Note: Gemfile.lock is intentionally ignored for GitHub Pages deployment
+# to avoid lockfile churn across different Ruby environments. The GitHub
+# Pages build process uses its own pinned dependencies.
+.bundle/
+vendor/bundle/
+vendor/cache/
+Gemfile.lock
+*.gem
+
+# Ruby version files (optional)
+.ruby-version
+
+# Local tool caches (Bundler, gems)
+.bundle-cache/
+
+# Local development scripts
+dev.sh
+
+# OS and editor junk files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# VS Code and editor configuration
+.vscode/
+.prettierignore
+
+# IDE directories
+.idea/
+*.iml
+
+# Ruby tooling
+.bundle
+vendor

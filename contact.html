@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Contact"
-description: "Contact Digital Design 4 All for accessibility consulting."
+title: "Contact | Digital Design 4 All (DD4A)"
+description: "Get in touch with Digital Design 4 All (DD4A) for accessibility consulting. Based in Canada, working worldwide."
 ---
 
 
@@ -9,16 +9,17 @@ description: "Contact Digital Design 4 All for accessibility consulting."
   <div class="card content">
     <h1 class="page-title">Contact</h1>
     <p>
-      Email is best: <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>.
-      If you prefer a form, use the one below (it opens your email app by default).
+      Email us: <a class="js-email" href="#" data-user="info" data-domain="dd4a.ca">Email us</a>
+      <noscript>(info@dd4a.ca)</noscript>.
+      Based in Canada, working worldwide including the US.
     </p>
 
     <div class="notice" role="note">
-      <strong>Accessibility note:</strong> This form uses proper labels and does not rely on placeholders.
+      <strong>Privacy & accessibility:</strong> This form works with proper labels, logical flow, and keyboard navigation.
     </div>
 
-    <!-- Option A (no third-party): mailto form (works without JS, but depends on user's email client) -->
-    <form class="form" action="mailto:hello@yourdomain.com" method="post" enctype="text/plain">
+    <!-- Mailto form as fallback for direct email submission -->
+    <form class="form" action="mailto:info@dd4a.ca" method="post" enctype="text/plain">
       <div class="field">
         <label for="name">Name</label>
         <input id="name" name="name" autocomplete="name" required />
@@ -42,19 +43,13 @@ description: "Contact Digital Design 4 All for accessibility consulting."
 
       <button class="button primary" type="submit">Send</button>
       <p class="help">
-        If this doesn’t work on your device, email me directly at
-        <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>.
+        If this doesn't work on your device,
+        <a class="js-email" href="#" data-user="info" data-domain="dd4a.ca">email us directly</a>
+        <noscript>(info@dd4a.ca)</noscript>.
       </p>
     </form>
 
-    <hr class="hr" />
 
-    <h2>Optional: hosted form endpoint</h2>
-    <p>
-      If you want the form to submit without relying on a mail client, swap the form tag above for a service like
-      Formspree / StaticForms / Getform. These typically have free tiers. (You’d replace the <code>action</code> URL
-      and use their recommended hidden fields.)
-    </p>
   </div>
 </section>
 

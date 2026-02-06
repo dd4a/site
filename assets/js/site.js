@@ -1,3 +1,20 @@
+// Email obfuscation: construct mailto links from data attributes
+document.addEventListener('DOMContentLoaded', () => {
+  const emailLinks = document.querySelectorAll('.js-email');
+  emailLinks.forEach((link) => {
+    const user = link.getAttribute('data-user');
+    const domain = link.getAttribute('data-domain');
+    if (user && domain) {
+      const email = user + '@' + domain;
+      link.href = 'mailto:' + email;
+      // Only replace text if it's generic placeholder (e.g., "Email us", "info@dd4a.ca")
+      if (link.textContent === 'Email us') {
+        link.textContent = email;
+      }
+    }
+  });
+});
+
 // Accessible menu toggle (button controls nav via aria-expanded)
 (() => {
   const btn = document.querySelector('[data-menu-button]');
