@@ -1,12 +1,17 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="{{ site.baseurl }}/">
-      <img
-        src="{{ site.baseurl }}/assets/img/logo-horizontal-white.png"
-        alt="Digital Design 4 All"
-        width="220"
-        height="58"
-      />
+
+      <picture>
+        <source srcset="{{ site.baseurl }}/assets/img/emblem-white.png" media="(prefers-color-scheme: dark)">
+        <img
+          src="{{ site.baseurl }}/assets/img/emblem-navy.png"
+          alt="Digital Design 4 All (DD4A)"
+          width="40"
+          height="40"
+          style="width:40px;height:40px;display:block;"
+        />
+      </picture>
 
       <span class="brand-name">
         <strong>Digital Design 4 All</strong>
