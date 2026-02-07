@@ -240,11 +240,16 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
 }
 
 .actions{
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: .75rem;
-  margin-top: 1.2rem;
+/*  margin-top: 1.2rem; */
 }
+
+.actions li{ margin: 0; }
 
 /* Buttons: accessible in default + hover + focus-visible */
 .button{
@@ -345,10 +350,13 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
 .feature p{ color: var(--muted); margin: .35rem 0 0; }
 
 .meta{
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: .6rem;
-  margin-top: 1rem;
+/*  margin-top: 1rem; */
 }
 
 /* Pills are informational tags and non-interactive */
