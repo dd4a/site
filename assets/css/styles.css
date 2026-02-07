@@ -453,16 +453,23 @@ footer{
   .footer-links{ justify-content: flex-start; }
 }
 .footer-links a{
-  /* Remove pill visuals, keep spacing minimal for no layout shift */
-  padding: 0 .1em;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.1em;
   border: none;
   border-radius: 0;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+  line-height: 1.3;
   color: var(--muted);
   transition: color .15s;
+  outline-offset: 2px;
 }
 .footer-links a:hover{
   text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.3em;
   color: var(--text);
   /* No background, no border, no radius */
 }
@@ -470,8 +477,10 @@ footer{
 /* Focus-visible: strong rectangular outline, underline, no layout shift */
 .footer-links a:focus-visible {
   outline: var(--focus);
-  outline-offset: 3px;
+  outline-offset: 4px;
   text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.3em;
   color: var(--text);
   border: none;
   border-radius: 0;
