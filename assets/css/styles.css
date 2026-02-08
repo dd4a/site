@@ -173,7 +173,7 @@ nav a:hover{
 } */
 
 .menu-button{
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: .5rem;
   background: color-mix(in srgb, var(--panel) 92%, transparent);
@@ -244,8 +244,8 @@ nav a:hover{
 
 /* A11y: show nav when menu button is toggled, but only on small screens */
 @media (min-width: 861px){
-    #site-nav[hidden]{
-    display: flex;
+  #site-nav[hidden]{
+  display: flex;
   }
 }
 
@@ -716,9 +716,7 @@ button.button.primary:hover{
     outline-offset: 3px;
   }
 
-  @media (forced-colors: active){
-    .brand img{ display: none; }
-    .brand-mark{ display: none; }
-  }
+  .brand img{ display: none; }
+  .brand-mark{ display: none; }
 
 }
