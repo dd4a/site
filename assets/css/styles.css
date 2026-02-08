@@ -166,10 +166,11 @@ nav a[aria-current="page"]{
   text-underline-offset: .22em;
 }
 
+/*
 nav a:hover{
   background: color-mix(in srgb, var(--panel) 85%, transparent);
   border-color: var(--border);
-}
+} */
 
 .menu-button{
   display: inline-flex;
@@ -243,7 +244,7 @@ nav a:hover{
 
 /* A11y: show nav when menu button is toggled, but only on small screens */
 @media (min-width: 861px){
-#site-nav[hidden]{
+    #site-nav[hidden]{
     display: flex;
   }
 }
