@@ -30,15 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Accessible menu toggle (button controls nav via aria-expanded)
+// Selectors
 (() => {
   const btn = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("[data-site-nav]");
   if (!btn || !nav) return;
 
+// Utility to detect mobile viewport (matches CSS breakpoint)
 function isMobile() {
   return window.matchMedia("(max-width: 767px)").matches;
 }
 
+// Centralized function to set open/closed state of nav
   const setOpen = (open) => {
   // Desktop: nav should always be available/visible; Mobile: toggle it.
   const mobile = isMobile();
@@ -62,9 +65,13 @@ function isMobile() {
   }
 };
 
+// Initialize: ensure nav is closed on mobile and links are not tabbable
   setOpen(false);
 
+  // Toggle menu on button click (only on mobile)
   btn.addEventListener("click", () => {
+if(!isMobile()) return; // Only toggle on mobile
+
     const open = nav.dataset.open !== "true";
     setOpen(open);
     if (open) {
@@ -73,6 +80,7 @@ function isMobile() {
     }
   });
 
+  // Close menu on Escape key or click outside (only when open)
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && nav.dataset.open === "true") {
       setOpen(false);
@@ -80,10 +88,11 @@ function isMobile() {
     }
   });
 
+  // Close menu when clicking outside of nav and toggle (only when open)
   document.addEventListener("click", (e) => {
     if (nav.dataset.open !== "true") return;
     const target = e.target;
-    if (!nav.contains(target) && !btn.contains(target) setOpen(false);
+    if (!nav.contains(target) && !btn.contains(target)) setOpen(false);
   });
 
 // Close menu when focus leaves nav and toggle
