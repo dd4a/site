@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Utility to detect mobile viewport (matches CSS breakpoint)
 function isMobile() {
-  return window.matchMedia("(max-width: 767px)").matches;
+  return window.matchMedia("(max-width: 860px)").matches;
 }
 
 // Centralized function to set open/closed state of nav

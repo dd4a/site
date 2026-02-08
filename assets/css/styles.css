@@ -165,7 +165,7 @@ nav a:hover{
 }
 .menu-button:hover{ background: color-mix(in srgb, var(--panel) 85%, transparent); }
 
-# A11y: show nav when menu button is toggled, but only on small screens
+/* A11y: show nav when menu button is toggled, but only on small screens */
 @media (min-width: 861px){
 #site-nav[hidden]{
     display: flex;
@@ -187,7 +187,7 @@ nav a:hover{
     box-shadow: var(--shadow);
     min-width: 240px;
   }
-  #sitenav[data-open="true"]{ display: flex; }
+  #site-nav[data-open="true"]{ display: flex; }
   #site-nav a{ border-radius: 12px; }
   .menu-button{ display: inline-flex; }
 }
