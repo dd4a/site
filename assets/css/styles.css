@@ -146,9 +146,14 @@ nav a{
   border: 1px solid transparent;
 }
 nav a[aria-current="page"]{
+  border-color: color-mix(in srgb, var(--text) 35%, var(--border));
+  background: color-mix(in srgb, var(--panel) 75%, var(--accent));
+}
+/*
+nav a[aria-current="page"]{
   border-color: var(--border);
   background: color-mix(in srgb, var(--panel) 85%, transparent);
-}
+}*/
 nav a:hover{
   background: color-mix(in srgb, var(--panel) 85%, transparent);
   border-color: var(--border);
