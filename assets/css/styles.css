@@ -1,3 +1,9 @@
+/* Emblem image styles */
+.site-emblem {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
 /* =========================================================
    Accessible, lightweight design system (no framework)
    - Visible focus
