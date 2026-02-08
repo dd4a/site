@@ -40,14 +40,27 @@ function isMobile() {
 }
 
   const setOpen = (open) => {
-    if (isMobile()) {
-    nav.hidden = !open;
-    } else {
-    nav.hidden = false; // Always show nav on desktop
-    }
-    nav.dataset.open = open ? "true" : "false";
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  };
+  // Desktop: nav should always be available/visible; Mobile: toggle it.
+  const mobile = isMobile();
+  const actuallyOpen = mobile ? open : true;
+
+  // Semantic visibility (removes from layout + a11y tree when hidden)
+  nav.hidden = !actuallyOpen;
+
+  // State hooks (keep CSS + ARIA in sync)
+  nav.dataset.open = actuallyOpen ? "true" : "false";
+  btn.setAttribute("aria-expanded", actuallyOpen ? "true" : "false");
+
+  // Keyboard reachability:
+  // - Mobile: only tabbable when open
+  // - Desktop: normal links (no tabindex override)
+  const links = nav.querySelectorAll("a");
+  if (mobile) {
+    links.forEach((link) => (link.tabIndex = actuallyOpen ? 0 : -1));
+  } else {
+    links.forEach((link) => link.removeAttribute("tabindex"));
+  }
+};
 
   setOpen(false);
 
@@ -70,6 +83,24 @@ function isMobile() {
   document.addEventListener("click", (e) => {
     if (nav.dataset.open !== "true") return;
     const target = e.target;
-    if (!nav.contains(target) && target !== btn) setOpen(false);
+    if (!nav.contains(target) && !btn.contains(target) setOpen(false);
   });
+
+// Close menu when focus leaves nav and toggle
+document.addEventListener("focusin", (event) => {
+  if (btn.getAttribute("aria-expanded") === "true") {
+    const focused = event.target;
+    if (!nav.contains(focused) && !btn.contains(focused)) {
+      setOpen(false);
+    }
+  }
+});
+
+// Close menu when a nav link is activated
+nav.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    setOpen(false);
+  }
+});
+
 })();
