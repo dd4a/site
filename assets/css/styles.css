@@ -149,7 +149,7 @@ nav a[aria-current="page"]{
   font-weight: 600;
   color: var(--text)
   border-color: color-mix(in srgb, var(--text) 35%, var(--border));
-  background: color-mix(in srgb, var(--panel) 75%, var(--accent));
+  background: color-mix(in srgb, var(--panel) 85%, var(--accent));
 }
 /*
 nav a[aria-current="page"]{
