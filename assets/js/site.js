@@ -35,7 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("[data-site-nav]");
   if (!btn || !nav) return;
 
+function isMobile() {
+  return window.matchMedia("(max-width: 767px)").matches;
+}
+
   const setOpen = (open) => {
+    if (isMobile()) {
+    nav.hidden = !open;
+    } else {
+    nav.hidden = false; // Always show nav on desktop
+    }
     nav.dataset.open = open ? "true" : "false";
     btn.setAttribute("aria-expanded", open ? "true" : "false");
   };
