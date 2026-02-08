@@ -3,6 +3,5 @@
   "rules": {
     "no-dup-id": "error",
     "require-sri": "off",
-    "void": "error"
   }
 }
