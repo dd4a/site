@@ -631,3 +631,94 @@ button.button.primary:hover{
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* Windows High Contrast / Forced Colors support (desktop + mobile) */
+@media (forced-colors: active){
+
+  /* Remove decorative backgrounds that can fight forced colors */
+  body{
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  header.site-header{
+    background: Canvas;
+    border-bottom: 1px solid CanvasText;
+    backdrop-filter: none;
+  }
+
+  /* Panels/cards: keep them as clear bordered regions */
+  .card,
+  .skip-link,
+  input,
+  textarea,
+  select{
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+
+  /* Links: let the system manage colors; keep underline affordance */
+  a{
+    color: LinkText;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: .18em;
+  }
+
+  /* Primary nav boundaries remain visible */
+  #site-nav{
+    background: Canvas;
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+  #site-nav a{
+    color: LinkText;
+    border-color: transparent;
+  }
+
+  /* Current page: non-color-only cue that survives HC */
+  #site-nav a[aria-current="page"]{
+    font-weight: 700;
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    text-decoration: underline;
+  }
+
+  /* Menu button: must look like a control */
+  .menu-button{
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+  }
+
+  /* Hamburger/X lines visible in HC */
+  .hamburger,
+  .menu-button[aria-expanded="true"] .hamburger::before,
+  .menu-button[aria-expanded="true"] .hamburger::after{
+    background: ButtonText;
+  }
+
+  /* Footer links: keep the same HC-safe underline and focus */
+  .footer-links a{
+    color: LinkText;
+    text-decoration: underline;
+  }
+
+  /* Let the browser/OS render focus rings (your outline is fine too) */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible{
+    outline: 2px solid Highlight;
+    outline-offset: 3px;
+  }
+
+  @media (forced-colors: active){
+    .brand img{ display: none; }
+    .brand-mark{ display: none; }
+  }
+
+}
