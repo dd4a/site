@@ -2,6 +2,6 @@
   "extends": ["html-validate:recommended"],
   "rules": {
     "no-dup-id": "error",
-    "require-sri": "off",
+    "require-sri": "off"
   }
 }
