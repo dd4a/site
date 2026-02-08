@@ -173,7 +173,7 @@ nav a:hover{
 }
 
 @media (max-width: 860px){
-  nav{
+  #site-nav{
     display: none;
     position: absolute;
     right: var(--pad);
@@ -187,8 +187,8 @@ nav a:hover{
     box-shadow: var(--shadow);
     min-width: 240px;
   }
-  nav[data-open="true"]{ display: flex; }
-  nav a{ border-radius: 12px; }
+  #sitenav[data-open="true"]{ display: flex; }
+  #site-nav a{ border-radius: 12px; }
   .menu-button{ display: inline-flex; }
 }
 
