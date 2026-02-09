@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203 204" role="img" aria-label="Digital 4 All emblem"
+     style="--logo-bg:#ffffff;--logo-fg:#0b1d4a;">
+  <title>Digital 4 All emblem</title>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      svg {
+        --logo-bg: #0b1d4a;
+        --logo-fg: #ffffff;
+      }
+    }
+  </style>
+<!-- placeholder for favicon.svg -->
+</svg>
