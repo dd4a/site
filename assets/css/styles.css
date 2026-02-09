@@ -105,6 +105,7 @@ header.site-header{
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
+  background: var(--bg); /* fallback */
   background: color-mix(in srgb, var(--bg) 75%, transparent);
   border-bottom: 1px solid var(--border);
 }
@@ -128,6 +129,7 @@ header.site-header{
   width: 40px;
   height: 40px;
   border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)); /* fallback */
   background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 30%, var(--accent-2)));
   box-shadow: var(--shadow);
 }
@@ -154,7 +156,9 @@ nav a{
 #site-nav a[aria-current="page"]{
   font-weight: 600;
   color: var(--text);
+  border-color: var(--border); /* fallback */
   border-color: color-mix(in srgb, var(--text) 35%, var(--border));
+  background: var(--panel); /* fallback */
   background: color-mix(in srgb, var(--panel) 85%, var(--accent));
 }
 /*
@@ -165,7 +169,9 @@ nav a[aria-current="page"]{
 
 #site-nav a:hover,
 #site-nav a:focus-visible{
+  background: var(--panel); /* fallback */
   background: color-mix(in srgb, var(--panel) 78%, transparent);
+  border-color: var(--border); /* fallback */
   border-color: color-mix(in srgb, var(--text) 35%, var(--border));
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -182,8 +188,10 @@ nav a:hover{
   display: none;
   align-items: center;
   gap: .5rem;
+  background: var(--panel); /* fallback */
   background: color-mix(in srgb, var(--panel) 92%, transparent);
   color: var(--text);
+  border: 2px solid var(--border); /* fallback */
   border: 2px solid color-mix(in srgb, var(--text) 35%, var(--border));
   border-radius: 999px;
   padding: .55rem .8rem;
@@ -200,7 +208,9 @@ nav a:hover{
 }*/
 .menu-button:hover,
 .menu-button:focus-visible{
+  background: var(--panel); /* fallback */
   background: color-mix(in srgb, var(--panel) 78%, transparent);
+  border-color: var(--border); /* fallback */
   border-color: color-mix(in srgb, var(--text) 35%, var(--border));
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -291,6 +301,7 @@ main{ padding: 2.2rem 0 3rem; }
 }
 
 .card{
+  background: var(--panel); /* fallback */
   background: color-mix(in srgb, var(--panel) 92%, transparent);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -357,6 +368,7 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
   letter-spacing: .01em;
 
   /* Default: neutral button */
+  background: var(--panel); /* fallback */
   background: color-mix(in srgb, var(--panel) 92%, transparent);
   color: var(--text);
   box-shadow: none;
@@ -381,6 +393,7 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
 /* Hover: do NOT change text colour. Increase affordance via border/shadow */
 .button:hover{
   transform: translateY(-1px);
+  border-color: var(--border); /* fallback */
   border-color: color-mix(in srgb, var(--text) 45%, var(--border));
   box-shadow: 0 10px 22px rgba(0,0,0,.25);
 }
@@ -394,6 +407,7 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
 /* Focus: rely on strong outline (already in your CSS via :focus-visible),
    but keep button looking intentional too */
 .button:focus-visible{
+  border-color: var(--border); /* fallback */
   border-color: color-mix(in srgb, var(--text) 55%, var(--border));
 }
 
