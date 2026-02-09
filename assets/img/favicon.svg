@@ -1,14 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203 204" role="img" aria-label="Digital 4 All emblem"
-     style="--logo-bg:#ffffff;--logo-fg:#0b1d4a;">
-  <title>Digital 4 All emblem</title>
-  <style>
-    @media (prefers-color-scheme: dark) {
-      svg {
-        --logo-bg: #0b1d4a;
-        --logo-fg: #ffffff;
-      }
-    }
-  </style>
-<!-- placeholder for favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203 204">
+<style>
+:root { --fg: #0b1d4a; }
+@media (prefers-color-scheme: dark) { :root { --fg: #ffffff; } }
+</style>
+<path d="M 138 154 L 139 154 L 154 139 L 138 139 Z M 185 107 L 107 107 L 107 186 L 128 165 L 128 129 L 129 128 L 165 128 L 185 108 Z M 17 107 L 17 108 L 25 116 L 26 116 L 27 118 L 95 186 L 96 186 L 96 107 Z M 65 129 L 66 128 L 74 128 L 75 129 L 75 137 L 74 138 Z M 107 17 L 107 75 L 137 75 L 138 76 L 138 96 L 159 96 L 159 69 L 139 49 L 138 49 L 138 64 L 137 65 L 129 65 L 128 64 L 128 38 Z M 96 17 L 95 17 L 17 95 L 17 96 L 96 96 Z M 74 65 L 75 66 L 75 74 L 74 75 L 66 75 L 65 74 Z M 101 4 L 4 101 L 4 102 L 101 199 L 102 199 L 199 102 L 199 101 L 102 4 Z M 101 8 L 102 8 L 195 101 L 195 102 L 102 195 L 101 195 L 8 102 L 8 101 Z" fill="var(--fg)" fill-rule="evenodd"/>
 </svg>
