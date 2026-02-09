@@ -15,10 +15,14 @@ FILES=$(git ls-files \
   | grep -v '^\.gitignore$' \
   | tr '\n' ' ')
 
-# 1) Raw email
-if grep -nE 'info@dd4a\.ca' $FILES >/dev/null; then
-  echo "❌ Found raw email address in tracked files:"
-  grep -nE 'info@dd4a\.ca' $FILES
+# 1) Raw email (allow in schema.org JSON-LD blocks only)
+RAW_EMAIL_PATTERN='info@dd4a\.ca'
+ALLOW_IN_SCHEMA_ORG='"email": "info@dd4a.ca"'
+RAW_EMAIL_OCCURRENCES=$(grep -nE "$RAW_EMAIL_PATTERN" $FILES || true)
+FORBIDDEN_EMAIL_OCCURRENCES=$(echo "$RAW_EMAIL_OCCURRENCES" | grep -v "$ALLOW_IN_SCHEMA_ORG" || true)
+if [[ -n "$FORBIDDEN_EMAIL_OCCURRENCES" ]]; then
+  echo "❌ Found raw email address in tracked files (outside allowed schema.org JSON-LD blocks):"
+  echo "$FORBIDDEN_EMAIL_OCCURRENCES"
   exit 1
 fi
 
