@@ -1,46 +1,64 @@
 ---
 layout: default
-title: "Privacy | Digital Design 4 All (DD4A)"
-description: "Privacy policy for Digital Design 4 All. Built with accessibility and security in mind."
+title: "Privacy policy – Digital Design 4 All"
+description: "Privacy policy for Digital Design 4 All. Accessibility-first, secure, and low-data by design. Based in Canada, serving the US and international clients."
+og_title: "Privacy policy – Digital Design 4 All"
+og_description: "Privacy policy for Digital Design 4 All. Accessibility-first, secure, and low-data by design. Based in Canada, serving the US and international clients."
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Digital Design 4 All",
+  "url": "https://www.dd4a.ca",
+  "email": "info@dd4a.ca",
+  "areaServed": ["Canada", "US", "International"],
+  "serviceType": ["Accessibility Consulting", "WCAG Audits", "Privacy Policy"],
+  "founder": {
+    "@type": "Person",
+    "hasCredential": ["CPWA (IAAP)", "PhD Human Factors"],
+    "memberOf": ["ISO", "ITU"],
+    "description": "Led enterprise accessibility programs, contributed to international standards, hands-on testing with NVDA, JAWS, VoiceOver, TalkBack."
+  }
+}
+</script>
 
 <section class="section">
   <div class="card content">
-    <h1 class="page-title">Privacy</h1>
+    <h1 class="page-title">Privacy policy</h1>
     <p>
-      Digital Design 4 All (DD4A) is committed to your privacy. This site is simple and low-data by design.
+      Digital Design 4 All (DD4A) is committed to your privacy. This site is accessibility-first, secure, and low-data by design. Based in Canada, serving the US and international clients.
     </p>
-
     <h2>What we collect</h2>
     <ul>
       <li><strong>Contact information:</strong> If you email us directly, we receive and keep your name, email, and message to respond to your inquiry.</li>
       <li><strong>Site analytics:</strong> This site does not use analytics tracking, cookies, or third-party services.</li>
       <li><strong>Logs:</strong> Basic server logs (IP, page viewed, timestamp) may be retained per standard hosting practice.</li>
     </ul>
-
     <h2>How we use information</h2>
     <ul>
       <li>To respond to inquiries and provide consulting services.</li>
       <li>To maintain records required under Canadian business law.</li>
       <li>We do not sell or monetize personal information. We do not share or use your information for marketing without consent.</li>
     </ul>
-
     <h2>Data retention</h2>
     <ul>
       <li>Contact and project information is kept for business and tax purposes and securely archived.</li>
       <li>You may request deletion of your information at any time (subject to legal or contractual hold requirements).</li>
     </ul>
-
     <h2>Security</h2>
     <p>
       We use reasonable security measures to protect your information. This site is served over HTTPS (encrypted).
       If you have concerns, please reach out.
     </p>
-
     <h2>Questions?</h2>
     <p>
       {% include email-link.html text="Email us" subject="Privacy questions" %} with privacy questions or data requests.
     </p>
+    <div class="actions">
+      <a class="button" href="{{ site.baseurl }}/contact.html">Contact for accessibility consulting</a>
+      <a class="button" href="{{ site.baseurl }}/services.html">Accessibility consulting services</a>
+    </div>
   </div>
 </section>

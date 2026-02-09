@@ -1,43 +1,57 @@
 ---
 layout: default
-title: "Resources | Digital Design 4 All (DD4A)"
-description: "Accessibility standards, practical testing checklists, and resources for web, mobile, and document accessibility."
+title: "Accessibility standards, guidance, and checklists – Digital Design 4 All"
+description: "Applied accessibility standards, practical WCAG checklists, procurement guidance, and resources for web, mobile, and document accessibility. Serving Canada, the US, and internationally."
+og_title: "Accessibility standards, guidance, and checklists – Digital Design 4 All"
+og_description: "Applied accessibility standards, practical WCAG checklists, procurement guidance, and resources for web, mobile, and document accessibility. Serving Canada, the US, and internationally."
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Digital Design 4 All",
+  "url": "https://www.dd4a.ca",
+  "email": "info@dd4a.ca",
+  "areaServed": ["Canada", "US", "International"],
+  "serviceType": ["Accessibility Consulting", "WCAG Audits", "Guidance"],
+  "founder": {
+    "@type": "Person",
+    "hasCredential": ["CPWA (IAAP)", "PhD Human Factors"],
+    "memberOf": ["ISO", "ITU"],
+    "description": "Led enterprise accessibility programs, contributed to international standards, hands-on testing with NVDA, JAWS, VoiceOver, TalkBack."
+  }
+}
+</script>
 
 <section class="section">
   <div class="card content">
-    <h1 class="page-title">Resources</h1>
+    <h1 class="page-title">Accessibility standards, guidance, and checklists</h1>
     <p>
-      Digital accessibility is built on standards, testing patterns, and team enablement.
-      Below is a comprehensive guide to standards we reference, practical checks we recommend, and tools that can help.
+      Digital Design 4 All provides applied accessibility standards, practical WCAG checklists, procurement guidance, and resources for web, mobile, and document accessibility. Our guidance is grounded in standards development, enterprise experience, and usability testing with people with disabilities.
     </p>
-
     <hr class="hr" />
-
-    <h2>Standards & guidance</h2>
+    <h2>Standards and frameworks</h2>
     <ul>
       <li>WCAG 2.2 (Web Content Accessibility Guidelines)</li>
-      <li>WAI-ARIA Authoring Practices (APG)</li>
       <li>EN 301 549 (ICT accessibility requirements)</li>
+      <li>Section 508 (US federal procurement)</li>
+      <li>WAI-ARIA Authoring Practices (APG)</li>
     </ul>
-
-    <h2>Practical checks we recommend</h2>
+    <h2>Practical accessibility checklists</h2>
     <ul>
       <li><strong>Keyboard navigation:</strong> Tab, Shift+Tab, Enter, Space, Escape—can you use the app without a mouse?</li>
-      <li><strong>Headings & landmarks:</strong> Logical structure that matches visual hierarchy.</li>
+      <li><strong>Headings and landmarks:</strong> Logical structure that matches visual hierarchy.</li>
       <li><strong>Form accessibility:</strong> Proper labels, error messages, instructions, and status updates.</li>
       <li><strong>Color contrast:</strong> 4.5:1 for text; don't rely on color alone for meaning.</li>
-      <li><strong>Motion & animation:</strong> Respect `prefers-reduced-motion` for users sensitive to motion.</li>
+      <li><strong>Motion and animation:</strong> Respect `prefers-reduced-motion` for users sensitive to motion.</li>
       <li><strong>Mobile screen readers:</strong> VoiceOver (iOS), TalkBack (Android)—how does your app read?</li>
       <li><strong>Document structure:</strong> PDFs, Word docs—headings, lists, and alt text for images.</li>
     </ul>
-
-    <h2>Practical WCAG interpretation</h2>
+    <h2>WCAG interpretation and defensibility</h2>
     <p>
       WCAG provides success criteria; our role is to interpret them for your product context so teams can make defensible choices. We document sampling decisions, test methods, and edge-case rationale so findings are auditable and repeatable.
     </p>
-
     <h2>Common audit mistakes</h2>
     <ul>
       <li><strong>Poor sampling notes:</strong> Not documenting how pages/components were selected for testing.</li>
@@ -45,16 +59,18 @@ description: "Accessibility standards, practical testing checklists, and resourc
       <li><strong>Ambiguous remediation guidance:</strong> Fixes without acceptance criteria or QA steps lead to regressions.</li>
       <li><strong>One-off fixes:</strong> Remediating a page without addressing systemic issues in patterns or CMS templates.</li>
     </ul>
-
-    <h2>Procurement considerations</h2>
+    <h2>Procurement and maintenance guidance</h2>
     <p>
       Public-sector and enterprise procurement often requires clear evidence, VPAT or conformance statements, and long-term maintenance plans. We help procurement teams write evaluation criteria, request-for-proposal language, and vendor checklists so accessibility requirements are actionable and enforceable.
     </p>
-
     <div class="notice" role="note">
-      <strong>Need a tailored checklist?</strong>
+      <strong>Need a tailored accessibility checklist?</strong>
       We craft customized accessibility checklists for your stack (React/Vue/Angular, CMS, PDF workflows, etc.).
-      <a href="{{ site.baseurl }}/contact.html">Get in touch</a> to discuss.
+      <a href="{{ site.baseurl }}/contact.html">Contact for accessibility guidance</a>.
+    </div>
+    <div class="actions">
+      <a class="button" href="{{ site.baseurl }}/services.html">Accessibility consulting services</a>
+      <a class="button" href="{{ site.baseurl }}/contact.html">Contact for accessibility consulting</a>
     </div>
   </div>
 </section>
