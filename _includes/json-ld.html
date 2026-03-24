@@ -1,0 +1,17 @@
+{% assign _types = include.service_type | split: ", " %}<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Digital Design 4 All",
+  "url": "https://www.dd4a.ca",
+  "email": "info@dd4a.ca",
+  "areaServed": ["Canada", "US", "International"],
+  "serviceType": [{% for _t in _types %}"{{ _t }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+  "founder": {
+    "@type": "Person",
+    "hasCredential": ["CPWA (IAAP)", "PhD Human Factors"],
+    "memberOf": ["ISO", "ITU"],
+    "description": "Led enterprise accessibility programs, contributed to international standards, hands-on testing with NVDA, JAWS, VoiceOver, TalkBack."
+  }
+}
+</script>
