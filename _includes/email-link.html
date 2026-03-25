@@ -11,9 +11,9 @@ Options:
 {%- assign subject = include.subject | default: "" -%}
 {%- assign extra_class = include.class | default: "" -%}
 
-<a class="js-email {{ extra_class | strip }}"
+<a class="js-email{% if extra_class != "" %} {{ extra_class }}{% endif %}"
    href="#"
-   data-email="aW5mb0BkZDRhLmNh"{%- if subject != "" -%} data-subject="{{ subject }}"{%- endif -%}
+   data-email="aW5mb0BkZDRhLmNh"{% if subject != "" %} data-subject="{{ subject }}"{% endif %}
    >
 {{ link_text }}</a>
 <noscript><span>info [at] dd4a.ca</span></noscript>

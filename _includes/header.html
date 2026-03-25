@@ -30,8 +30,7 @@
     <span class="menu-label">Menu</span>
     </button>
 
-    {% assign u = page.url | default: "/" %}
-
+{% assign u = page.url | default: "/" %}
     <nav id="site-nav" data-site-nav aria-label="Primary" hidden>
       <a href="{{ site.baseurl }}/" {% if u == "/" %}aria-current="page"{% endif %}>Home</a>
       <a href="{{ site.baseurl }}/services.html" {% if u contains "services" %}aria-current="page"{% endif %}>Services</a>

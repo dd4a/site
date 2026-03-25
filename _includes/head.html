@@ -15,13 +15,12 @@
   <meta property="og:title" content="{{ page.og_title | default: (page.title | default: 'Digital Design 4 All') }}">
   <meta property="og:description" content="{{ page.og_description | default: (page.description | default: 'Accessibility consulting: audits, remediation guidance, accessibility programs, and training.') }}">
   <meta property="og:type" content="website">
-  {% if page.og_image %}
+{% if page.og_image %}
   <meta property="og:image" content="{{ page.og_image }}">
-  {% else %}
+{% else %}
   <meta property="og:image" content="{{ site.baseurl }}/assets/img/og-card.svg">
-  {% endif %}
-
-  {% if page.noindex == true %}
+{% endif %}
+{% if page.noindex == true %}
   <meta name="robots" content="noindex">
-  {% endif %}
+{% endif %}
 </head>
