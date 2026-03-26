@@ -4,8 +4,8 @@ set -euo pipefail
 # 1) Install Ruby gems (if needed)
 bundle install
 
-# 2) Build the site
-bundle exec jekyll build
+# 2) Build the site (empty baseurl so asset paths resolve correctly under http-server)
+bundle exec jekyll build --baseurl ""
 
 # 3) Serve built output + run checks
 npx http-server ./_site -p 8080 -c-1 --silent &
