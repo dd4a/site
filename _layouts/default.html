@@ -17,5 +17,8 @@
       const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
     </script>
+    <noscript>
+      <style>#year::after { content: "2025"; }</style>
+    </noscript>
   </body>
 </html>
