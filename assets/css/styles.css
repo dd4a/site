@@ -62,10 +62,12 @@ html{
 
 body{
   margin: 0;
+  min-height: 100vh;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   background:
     radial-gradient(1100px 600px at 20% 0%, rgba(16,32,112,.45), transparent 60%),
     radial-gradient(900px 500px at 90% 15%, rgba(40,56,80,.28), transparent 55%),
+    radial-gradient(800px 800px at 50% 100%, rgba(16,32,112,.1), transparent 70%),
     var(--bg);
   color: var(--text);
   line-height: var(--lh);
@@ -543,8 +545,7 @@ textarea{ min-height: 150px; resize: vertical; }
 }
 
 footer{
-  border-top: 1px solid var(--border);
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
   color: var(--muted);
 }
 .footer-grid{
