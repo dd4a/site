@@ -478,6 +478,7 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
   padding: 1.25rem;
 }
 .feature p{ color: var(--muted); margin: .35rem 0 0; }
+.feature a{ display: inline-block; padding: .35rem 0; }
 
 .meta{
   list-style: none;
