@@ -31,7 +31,6 @@
   --max: 1120px;
   --pad: clamp(1rem, 3vw, 2rem);
   --lh: 1.6;
-  --focus: 3px solid #fbbf24;
 }
 
 @media (prefers-color-scheme: light){
@@ -44,7 +43,6 @@
     --link: #4f46e5;
     --link-hover: #3730a3;
     --shadow: 0 10px 30px rgba(2,6,23,.12);
-    --focus: 3px solid #0ea5e9;
   }
 }
 
@@ -75,9 +73,24 @@ body{
 
 a{ color: var(--link); }
 a:hover{ color: var(--link-hover); }
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
-  outline: var(--focus);
-  outline-offset: 3px;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #0f172a;
+}
+
+@media (prefers-color-scheme: dark){
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 2px #0b1220, 0 0 0 5px #fbbf24;
+  }
 }
 
 .skip-link{
@@ -94,6 +107,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .skip-link:focus{
   left: .75rem;
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #0f172a;
 }
 
 .container{
@@ -406,11 +421,20 @@ h3{ font-size: 1.15rem; margin: 0 0 .4rem; }
   box-shadow: 0 6px 14px rgba(0,0,0,.22);
 }
 
-/* Focus: rely on strong outline (already in your CSS via :focus-visible),
-   but keep button looking intentional too */
+/* Focus: two-ring technique, dark variant via media query */
 .button:focus-visible{
-  border-color: var(--border); /* fallback */
-  border-color: color-mix(in srgb, var(--text) 55%, var(--border));
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #0f172a;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: .25em;
+}
+
+@media (prefers-color-scheme: dark){
+  .button:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 2px #0b1220, 0 0 0 5px #fbbf24;
+  }
 }
 
 /* Reduced motion: no movement */
@@ -587,16 +611,22 @@ footer{
   /* No background, no border, no radius */
 }
 
-/* Focus-visible: strong rectangular outline, underline, no layout shift */
+/* Focus-visible: two-ring technique, underline, no layout shift */
 .footer-links a:focus-visible {
-  outline: var(--focus);
-  outline-offset: 4px;
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #0f172a;
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 0.3em;
   color: var(--text);
   border: none;
   border-radius: 0;
+}
+
+@media (prefers-color-scheme: dark){
+  .footer-links a:focus-visible{
+    box-shadow: 0 0 0 2px #0b1220, 0 0 0 5px #fbbf24;
+  }
 }
 
 /* Ensure emblem is always 40x40 and aligned */
@@ -628,11 +658,6 @@ button.button.primary:hover{
   text-underline-offset: .22em;
 }
 
-.button:focus-visible{
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: .25em;
-}
 
 /* Prevent underline on icon-only buttons (future-proofing) */
 .button.icon-only:hover,
@@ -727,14 +752,15 @@ button.button.primary:hover{
     text-decoration: underline;
   }
 
-  /* Let the browser/OS render focus rings (your outline is fine too) */
+  /* box-shadow suppressed in forced colors — restore outline-based ring */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible{
-    outline: 2px solid Highlight;
+    outline: 3px solid Highlight;
     outline-offset: 3px;
+    box-shadow: none;
   }
 
   .brand img{ display: none; }
