@@ -14,7 +14,7 @@ const PAGES = [
   "/404.html"
 ];
 
-const AXE_TAGS = ["wcag2a", "wcag2aa", "wcag21aa"]; // includes color-contrast
+const AXE_TAGS = ["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]; // includes color-contrast
 
 (async () => {
   const browser = await chromium.launch();
