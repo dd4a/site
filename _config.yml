@@ -1,6 +1,6 @@
 title: "Digital Design 4 All"
-url: "https://dd4a.github.io"
-baseurl: "/site"
+url: "https://dd4a.ca"
+baseurl: ""
 
 plugins:
   - jekyll-sitemap
