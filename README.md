@@ -103,5 +103,5 @@ Standards: WCAG 2.0 A, WCAG 2.0 AA, WCAG 2.1 AA, WCAG 2.2 AA
 
 Pushes to `main` trigger the pages workflow automatically. The site is available at:
 
-- `https://dd4a.github.io/site/` (current)
-- `https://dd4a.ca/` (production domain — pending DNS setup)
+- `https://dd4a.ca/` (production — via Cloudflare)
+- `https://dd4a.github.io/site/` (GitHub Pages origin)
