@@ -28,8 +28,7 @@
   <meta name="twitter:description" content="{{ page.og_description | default: page.description }}">
   <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/img/og-card.png">
 
-  <!-- frame-ancestors only enforced via header; requires CDN -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self';">
+  <!-- CSP enforced via Cloudflare Transform Rule header -->
 
 {% if page.noindex == true %}
   <meta name="robots" content="noindex">
