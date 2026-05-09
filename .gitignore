@@ -31,6 +31,12 @@ Gemfile.lock
 # Local development scripts
 dev.sh
 
+# Secrets / credentials (defensive — these live outside the repo, but never commit if moved in)
+cf-token.txt
+*.token
+.env
+.env.*
+
 # OS and editor junk files
 .DS_Store
 .DS_Store?
