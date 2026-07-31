@@ -37,6 +37,10 @@ cf-token.txt
 .env
 .env.*
 
+# DNS admin workspace — this repo doubles as the DNS admin working directory.
+# Fully ignored, README included. Nothing in here belongs to the site or its history.
+_dns-admin/
+
 # OS and editor junk files
 .DS_Store
 .DS_Store?
