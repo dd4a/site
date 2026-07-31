@@ -1,0 +1,19 @@
+name: Prevent Absolute Paths
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make check script executable
+        run: chmod +x scripts/check-no-paths.sh
+
+      - name: Run absolute path safety check
+        run: ./scripts/check-no-paths.sh

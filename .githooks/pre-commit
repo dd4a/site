@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Local mirror of the CI gates. Every workflow that can block a push should have
+# an equivalent here, so "clean locally" and "green in CI" mean the same thing.
+#   .github/workflows/no-email.yml -> scripts/check-no-email.sh
+#   .github/workflows/no-paths.yml -> scripts/check-no-paths.sh
+
 # Prevent committing raw email or mailto links
 ./scripts/check-no-email.sh
+
+# Prevent committing absolute filesystem paths (this repo is public)
+./scripts/check-no-paths.sh
